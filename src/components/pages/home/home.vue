@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="">
     <div class="vux-demo">
       <img class="logo" src="../../../assets/vux_logo.png">
       <h1> </h1>
@@ -11,20 +11,29 @@
       </tabbar-item>
       <tabbar-item show-dot link="/message">
         <!--<img class="logo" src="../../../assets/vux_logo.png" style="width: 16px;">-->
-        <span slot="label">聊天</span>
+        <span slot="label">聊天<badge text="888"></badge></span>
+      </tabbar-item>
+      <tabbar-item  show-dot link="/login">
+      <!--<img class="logo" src="../../../assets/vux_logo.png" style="width: 16px;">-->
+        <span slot="label">登录</span>
+      </tabbar-item>
+      <tabbar-item show-dot link="/regist">
+        <!--<img class="logo" src="../../../assets/vux_logo.png" style="width: 16px;">-->
+        <span slot="label">注册</span>
       </tabbar-item>
     </tabbar>
   </div>
 </template>
 
 <script>
-import { Tabbar, TabbarItem,Icon} from 'vux'
+import { Tabbar, TabbarItem,Icon,Badge,} from 'vux'
 
 export default {
   components: {
     Tabbar,
     TabbarItem,
-    Icon 
+    Icon,
+    Badge,
   },
   data () {
     return {

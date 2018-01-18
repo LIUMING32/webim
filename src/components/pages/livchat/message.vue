@@ -1,9 +1,7 @@
 <template>
   <div class="hello" >
 	    <drawer>
-		    <view-box>
 		      <router-view></router-view>
-	      </view-box>
 		  </drawer>
 	    <tabbar>
 	      <tabbar-item selected link="/message" >
@@ -15,7 +13,6 @@
 	        <span slot="label">通讯录</span>
 	      </tabbar-item>
 	    </tabbar>
-	    
   </div>
 </template>
 

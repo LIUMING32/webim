@@ -1,49 +1,35 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <group title="set keyboard=number and is-type=china-mobile">
+    <group >
       <x-input title="手机号码" name="mobile" placeholder="请输入手机号码" keyboard="number" is-type="china-mobile"></x-input>
     </group>
-    <group title="确认输入">
+    <group >
       <x-input title="密码" type="text" placeholder="" v-model="password" :min="6" :max="16" @on-change="change"></x-input>
     </group>
     <box gap="10px 10px">
-    	<x-button type="primary">{{login}}</x-button>
+    	<!--<span v-model="submit001">{{submit001}}</span>-->
+    	<x-button type="primary" @click.native="sub">{{login}}</x-button>
     </box>
   </div>
 </template>
 <script>
-import { XInput, Group, XButton, Cell } from 'vux'
-
+import { XInput, Group, XButton, Cell,Box, } from 'vux'
 export default {
   components: {
     XInput,
     XButton,
     Group,
-    Cell
+    Cell,
+    Box
   },
   data () {
     return {
     	msg:'WEBIM',
     	login:'登录',
-      password: '123465',
+      password: '',
       password2: '',
-      enterText: '',
-      valid1: false,
-      valid2: false,
-      iconType: '',
-      be2333: function (value) {
-        return {
-          valid: value === '2333',
-          msg: 'Must be 2333'
-        }
-      },
-      style: '',
-      disabledValue: 'hello',
-      debounceValue: '',
-      maxValue: '',
-      maskValue: '13545678910',
-      maskValue2: ''
+      submit001: 'click me',
     }
   },
   methods: {
@@ -64,11 +50,19 @@ export default {
     },
     onEnter (val) {
       console.log('click enter!', val)
-    }
+    },
+    sub (value) {
+       this.submit001 = 'processing';
+    },
+
   }
 }
 </script>
+
 <style scoped>
+html body{background: #fbf9fe;}
+
+h1{ text-align: center;color:#1aab19;}
 .red {
   color: red;
 }
